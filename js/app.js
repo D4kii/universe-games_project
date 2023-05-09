@@ -1,3 +1,3 @@
 'use strict'
 
-import './router.js'
+import './routes.js'
