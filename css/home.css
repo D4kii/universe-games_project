@@ -1,10 +1,55 @@
-.container-home {
+.container-title{
+    font-size: 4rem;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
 }
 
+.separacao-esquerda_home{
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding-bottom: 6rem;
+}
+
+.menu-components{
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-evenly;
+}
+.container-title p {
+    font-weight: 900;
+
+}
+
+.container-home{
+    display: flex;
+    align-items: center;
+}
+
+.container-title{
+    display: flex;
+    font-weight: 400;
+    align-self: center;
+    justify-self: flex-start;
+}
+
+/**** ANIMAÇÕES ****/
 .astronauta-image {
     animation-duration: 3s;
+    display: flex;
     animation-name: slidein;
     animation: slidein 5s ease-in-out infinite;
+    position: relative;
+    align-self: center;
+    /* width: 30rem;
+    height: 30rem; */
 }
 
 @keyframes slidein {
@@ -15,14 +60,14 @@
     }
 
     50% {
-        transform: translatey(-50px)
+        transform: translatey(-70px)
     }
 }
-.container-title{
-    color: #000;
 
-    
-}
-.container-title span{
-        font-weight: 900;
-}
+
+
+
+
+
+
+

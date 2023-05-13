@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/home.css">
     <script src="./js/app.js" defer type="module"></script>
@@ -13,48 +17,42 @@
 <body>
     <header>
         <nav class="menu-container">
-            <a href="/" onclick="route()">home</a>
-            <div class="dropdown" id="dropdown">
-                <span class="menu-dropdown_title">Plataformas</span>
-                <div class="menu-dropdown_content" id="menu-dropdown_content">
 
-                    <p><a href="/plataformas" onclick="route()" class="card- menu_plataformas-desktop" id="desktop>Desktop</a></p>
-                    
-                    <p class=" card- menu_plataformas-steam" id="steam">
-                            <a href="/plataformas" onclick="route()">Steam</a>
+            <img src="./img/logo.png" alt="Logo do site 'Universe Games'" class="logo">
+
+            <p class="menu-components" id="home">
+                <a href="/home" onclick="route()"> home</a>
+            </p>
+            <div class="dropdown" id="dropdown">
+                <span class="menu-components menu-dropdown_title">Plataformas</span>
+                <div class="menu-components menu-dropdown_content" id="menu-dropdown_content">
+
+                    <p class="card- menu_plataformas-desktop" id="desktop">
+                        <a href="/plataformas" onclick="route()">Desktop</a>
                     </p>
-                    <p class="card- menu_plataformas-epic_games" id="epic-games">
-                        <a href="/plataformas" onclick="route()">Epic Games</a>
+
+                    <p class="card- menu_plataformas-browser" id="browser">
+                        <a href="/plataformas" onclick="route()">Browser</a>
                     </p>
-                    <p class="card- menu_plataformas-ubisoft" id="ubsoft">
-                        <a href="/plataformas" onclick="route()">Ubisoft</a>
-                    </p>
-                    <p class="card- menu_plataformas-steam" id="ps4">
-                        <a href="/plataformas" onclick="route()">PS4</a>
-                    </p>
-                    <p class="card- menu_plataformas-steam" id="ps5">
-                        <a href="/plataformas" onclick="route()">PS5</a>
-                    </p>
-                    <p class="card- menu_plataformas-steam" id="android">
-                        <a href="/plataformas" onclick="route()">Android</a>
-                    </p>
-                    <p class="card- menu_plataformas-steam" id="xbox-360">
-                        <a href="/plataformas" onclick="route()">Xbox 360</a>
-                    </p>
-                    <p class="card- menu_plataformas-steam" id="ios">
-                        <a href="/plataformas" onclick="route()">IOS</a>
-                    </p>
-                    <p class="card- menu_plataformas-steam" id="xbox-series-s">
-                        <a href="/plataformas" onclick="route()">Xbox Series S</a>
+                    <p class="card- menu_plataformas-todos" id="todos">
+                        <a href="/plataformas" onclick="route()">Todos</a>
                     </p>
                 </div>
             </div>
 
+            <a href="/vermelho" onclick="route()">
+                <p class="menu-components">Tipo</p>
 
-            <a href="/vermelho" onclick="route()">vermelho</a>
-            <a href="/azul" onclick="route()">azul</a>
-            <a href="/marrom" onclick="route()">marrom</a>
-            <a href="/lilas" onclick="route()">lilas</a>
+            </a>
+            <p class="menu-components" id="home">
+                <a href="/azul" onclick="route()">azul</a>
+            </p>
+            <p class="menu-components" id="home">
+                <a href="/marrom" onclick="route()">marrom</a>
+            </p>
+            <p class="menu-components" id="home">
+                <a href="/lilas" onclick="route()">lilas</a>
+            </p>
         </nav>
 
     </header>
@@ -63,7 +61,7 @@
 
 
     </main>
-
+    <footer></footer>
 </body>
 
 </html>
