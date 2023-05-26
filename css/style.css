@@ -36,7 +36,6 @@ body {
     position: fixed;
     font-family: 'Inter', sans-serif;
     font-family: 'Roboto', sans-serif;
-    background-image: url('../img/galaxy.jpg');
     background-position: bottom;
     backdrop-filter: blur(2px);
 
@@ -44,7 +43,7 @@ body {
 
 .menu-container {
     backdrop-filter: blur(12px);
-    color: #ffffff;
+    color: #000;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -71,11 +70,11 @@ body {
 }
 
 .logo{
-    filter: invert(100%);
+    filter: invert(20%);
 }
 
 .menu-components a{
-    color: #ffffff;
+    color: #000;
 
 }
 

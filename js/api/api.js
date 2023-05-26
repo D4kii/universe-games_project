@@ -1,38 +1,37 @@
-export const getAllGames = async () => {
+export const getAllCharacters = async () => {
 
-    const url = 'https://mmo-games.p.rapidapi.com/games';
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': 'df2c502274msh20e593d2ade9054p137103jsna7028b28b74c',
-            'X-RapidAPI-Host': 'mmo-games.p.rapidapi.com'
-        }
-    };
-
-    const response = await fetch(url, options);
-    const data = await response.text();
-
+    const url = 'https://rickandmortyapi.com/api/character';
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
 
     return data;
 }
-export const getPlataformas = async () => {
 
-    const url = 'https://mmo-games.p.rapidapi.com/games?platform=browser';
-const options = {
-	method: 'GET',
-	headers: {
-		platform: 'browser',
-		'X-RapidAPI-Key': 'df2c502274msh20e593d2ade9054p137103jsna7028b28b74c',
-		'X-RapidAPI-Host': 'mmo-games.p.rapidapi.com'
-	}
-};
+export const getPlanetas = async () => {
 
-try {
-	const response = await fetch(url, options);
-	const result = await response.text();
-	console.log(result);
-} catch (error) {
-	console.error(error);
+    const url = 'https://rickandmortyapi.com/api/location';
+
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
+    return data;
 }
+
+export const getPlanetsResidents = async (idPlanet) => {
+    const planeta = await getPlanetas()
+    const jsonPlaneta = []
+
+    planeta.residents.forEach(async unidadeResidente => {
+
+        const url = unidadeResidente
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log(data);
+        jsonPlaneta.push(data)
+    });
+
+    return jsonPlaneta;
+    
 }
 

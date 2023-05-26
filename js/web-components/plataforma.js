@@ -1,14 +1,15 @@
 'use strict'
 
-import { getAllGames } from '../api/api.js'
+import { getAllGames, getPlataformas } from '../api/api.js'
 
 const allGames = await getAllGames();
+const get = await getPlataformas();
 
 class card extends HTMLElement {
     constructor() {
         super()
         this.shadow = this.attachShadow({ mode: 'open' });
-        this.nome = allGames.title;
+        this.nome = get.title;
         this.image = null;
         this.descricao = '#ff0000'
         this.button = 'Read More'
