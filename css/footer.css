@@ -1,0 +1,19 @@
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: footer;
+}
+.direitos-reservados{
+    font-size: .8rem;
+    color: #fff;
+    display: flex;
+    font-weight: 200;
+}
+
+.direitos-reservados a{
+    margin-left: .5rem;
+    margin-right: .5rem;
+    font-weight: 500;
+    color: #BDFFA1;
+}

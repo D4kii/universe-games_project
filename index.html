@@ -7,10 +7,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Prompt:ital,wght@0,300;0,400;0,500;0,600;1,200;1,500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/personagens.css">
+    <link rel="stylesheet" href="/css/planetas.css">
+    <link rel="stylesheet" href="/css/episodios.css">
     <script src="./js/app.js" defer type="module"></script>
     <title>Rick and Morty Info</title>
 </head>
@@ -26,35 +30,17 @@
                 <p class="menu-components" id="home">
                     <a href="/home" onclick="route()"> home</a>
                 </p>
-                <div class="dropdown" id="dropdown">
-                    <span class="menu-components menu-dropdown_title">Plataformas</span>
-                    <div class="menu-components menu-dropdown_content" id="menu-dropdown_content">
 
-                        <p class="card- menu_plataformas-desktop" id="desktop">
-                            <a href="/plataformas" onclick="route()">Desktop</a>
-                        </p>
-
-                        <p class="card- menu_plataformas-browser" id="browser">
-                            <a href="/plataformas" onclick="route()">Browser</a>
-                        </p>
-                        <p class="card- menu_plataformas-todos" id="todos">
-                            <a href="/plataformas" onclick="route()">Todos</a>
-                        </p>
-                    </div>
-                </div>
-
-                <a href="/" onclick="route()">
-                    <p class="menu-components">Tipo</p>
-
-                </a>
-                <p class="menu-components" id="home">
-                    <a href="/azul" onclick="route()">azul</a>
+                <p class="menu-components menu_plataformas-personagens" id="personagens">
+                    <a href="/personagens" onclick="route()">Personagens</a>
                 </p>
-                <p class="menu-components" id="home">
-                    <a href="/marrom" onclick="route()">marrom</a>
+
+                <p class="menu-components menu_plataformas-planetas" id="planetas">
+                    <a href="/planetas" onclick="route()">Planetas</a>
                 </p>
-                <p class="menu-components" id="home">
-                    <a href="/lilas" onclick="route()">lilas</a>
+
+                <p class="menu-components menu_plataformas-episodios" id="episodios">
+                    <a href="/episodios" onclick="route()">Episódios</a>
                 </p>
             </div>
 
@@ -63,10 +49,11 @@
     </header>
     <main id="root">
 
-
-
     </main>
-    <footer></footer>
+    <footer>
+        <p class="direitos-reservados">Todos os Direitos Reservados | Clique <a href="https://github.com/D4kii" class="link-github"> aqui </a> para conhecer o Autor</p>
+        
+    </footer>
 </body>
 
 </html>

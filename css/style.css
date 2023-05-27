@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-header{
+header {
     grid-area: header;
 }
 
@@ -29,30 +29,29 @@ body {
     grid-template-areas:
         "header header"
         "main main"
-        "main main"
         "footer footer";
-    grid-template-rows: 80px 2fr 2fr 70px;
+    grid-template-rows: 80px 1fr 70px;
     grid-template-columns: 20%;
-    position: fixed;
-    font-family: 'Inter', sans-serif;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Prompt', sans-serif;
     background-position: bottom;
     backdrop-filter: blur(2px);
+    background-color: #000;
 
 }
 
 .menu-container {
     backdrop-filter: blur(12px);
-    color: #000;
+    color: #fff;
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: .7rem;
     gap: 24px;
+    background-color: #000;
 }
 
-.search-jogos{
+.search-jogos {
     height: 3rem;
     width: 40rem;
     background: transparent;
@@ -62,117 +61,43 @@ body {
 
 #root {
     grid-area: main;
-    
 }
 
-.footer{
-    grid-area: footer;
-}
 
-.logo{
+
+.logo {
     filter: invert(20%);
+    margin-left: 4rem;
 }
 
-.menu-components a{
-    color: #000;
+.menu-components a {
+    color: #fff;
+    padding: .1rem;
+    transition: .4s;
 
 }
 
-.container-vermelho {
-    background-color: red;
-}
 
-.container-azul {
-    background-color: blue;
-}
-
-.container-marrom {
-    background-color: #7A3D1F;
-}
-
-.container-lilas {
-    background-color: #C694F6;
-}
-
-.menu-rotas{
+.menu-rotas {
     color: #ffffff;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     font-size: 1rem;
     gap: 24px;
+    margin-right: 5rem;
 }
+
 /****************************************/
 
-
-.card- {
-    padding: 1rem;
-    width: max-content;
+.menu-components:hover {
+    text-shadow: 3px 3px #BDFFA1;
 }
 
-.menu-dropdown_title:hover {
-    color: #ffffff;
-    transition: .2s;
-}
+.menu-components a:hover {
+    color: #BDFFA1;
 
-.menu-dropdown_status {
-    width: 10%;
-    justify-content: center;
-    display: flex;
-    align-items: center;
 }
-
-.legenda-status_componentes {
-    display: flex;
-    align-items: center;
-    width: 30%;
-    justify-content: space-evenly;
-    padding: .5rem;
-}
-
-.dropdown-place {
-    display: flex;
-    gap: 2rem;
-    padding-left: 2rem;
-    padding: .5rem;
-    align-items: center;
-}
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.menu-dropdown_content {
-    display: none;
-    height: max-content;
-    position: absolute;
-    background-color: #000;
-    border: solid #fff .5px;
-    color: #000;
-    min-width: 12rem;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    padding: 12px 16px;
-    z-index: 1;
-    height: max-content;
-}
-
-.dropdown:hover .menu-dropdown_content {
-    display: block;
-}
-
-.dropdown:hover .menu-dropdown_title {
-    color: #ffffff;
-    transition: .2s;
-}
-
-.menu_plataformas-pc:hover {
-    background-color: #ffffff;
-    color: #3347B0;
-    transition: .4s;
-}
-
 
 
 @media (max-width:1100px) {
@@ -190,4 +115,23 @@ body {
     }
 }
 
-/*************************** TESTE ***********************************/
+
+body {
+    scrollbar-width: thin;
+    scrollbar-color: black transparent;
+}
+
+body::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+    /* A altura só é vista quando a rolagem é horizontal */
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+    padding: 2px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #BDFFA1;
+}

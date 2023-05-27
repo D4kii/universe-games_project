@@ -4,10 +4,9 @@ import { plataforma } from './app.js'
 
 const routes = {
     '/home': '/pages/home.html',
-    '/plataformas': '/pages/plataformas.html',
-    '/azul': '/pages/azul.html',
-    '/lilas': '/pages/lilas.html',
-    '/marrom': '/pages/marrom.html'
+    '/personagens': '/pages/personagens.html',
+    '/planetas': '/pages/planetas.html',
+    '/episodios': '/pages/episodios.html'
 }
 const route = async() => {
     window.event.preventDefault()
