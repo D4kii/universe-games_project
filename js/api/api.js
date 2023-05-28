@@ -1,3 +1,4 @@
+//PERSONAGENS
 export const getAllCharacters = async () => {
 
     const url = 'https://rickandmortyapi.com/api/character';
@@ -8,6 +9,8 @@ export const getAllCharacters = async () => {
     return data;
 }
 
+
+//PLANETAS
 export const getPlanetas = async () => {
 
     const url = 'https://rickandmortyapi.com/api/location';
@@ -35,3 +38,4 @@ export const getPlanetsResidents = async (idPlanet) => {
     
 }
 
+//EPISÓDIOS
