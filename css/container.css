@@ -1,11 +1,12 @@
-.container{
+.container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     color: #BDFFA1;
 }
-.search-box{
+
+.search-box {
     font-size: 1rem;
     color: #ffff;
     width: 60vh;
@@ -15,8 +16,9 @@
     outline: none;
     font-family: 'Prompt', sans-serif;
     margin-bottom: .2rem;
-    
+
 }
+
 .search-box::-webkit-search-cancel-button {
     position: relative;
     right: 20px;
@@ -25,21 +27,91 @@
     width: 20px;
     color: #ffff;
     border-radius: 10px;
-  }
+}
 
-  .search-container{
+.search-container {
     display: flex;
     border-bottom: #BDFFA1 2px solid;
     gap: 1rem;
-  }
+}
 
-  .container-title{
+.container-title {
     font-size: 5rem;
     font-weight: 400;
     color: #fff;
-    text-shadow: 
-             -1px -1px 0px #BDFFA1, 
-             -1px 1px 0px #BDFFA1,                    
-              1px -1px 0px #BDFFA1,                  
-              1px 0px 0px #BDFFA1;
-  }
+    text-shadow:
+        -1px -1px 0px #BDFFA1,
+        -1px 1px 0px #BDFFA1,
+        1px -1px 0px #BDFFA1,
+        1px 0px 0px #BDFFA1;
+}
+
+.card- {
+    margin: 5rem;
+    width: 100vh;
+    gap: 3rem;
+    display: grid;
+    columns: 5rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+
+
+
+
+
+
+
+.card {
+    width: 100%;
+    max-width: 300px;
+    height: 70px;
+    background: #353535;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    backdrop-filter: blur(10px);
+    transition: 0.5s ease-in-out;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.img {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    border-radius: 10px;
+    background: linear-gradient(#d7cfcf, #9198e5);
+}
+
+
+.textBox {
+    width: calc(100% - 90px);
+    margin-left: 10px;
+    color: white;
+    font-family: 'Poppins' sans-serif;
+}
+
+.textContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.span {
+    font-size: 10px;
+}
+
+.h1 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.p {
+    font-size: 12px;
+    font-weight: lighter;
+}
