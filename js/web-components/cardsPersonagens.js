@@ -1,15 +1,18 @@
 'use strict'
 
-class card extends HTMLElement {
+class cardCharacter extends HTMLElement {
     constructor() {
         super()
         this.shadow = this.attachShadow({ mode: 'open' });
-        this.nome = get.title;
+        this.nome = null;
         this.image = null;
-        this.descricao = null
+        this.status = null;
+        this.gender = null;
+        this.location = 'Abadango';
+        this.descricao = null;
     }
     static get observedAttributes(){
-        return['nome', 'foto', 'descricao']
+        return['nome', 'image', 'status', 'descricao', 'location', 'gender']
     }
 
     attributeChangedCallback(nameAttr, oldValue, newValue){
@@ -25,17 +28,22 @@ class card extends HTMLElement {
     styles(){
         const css = document.createElement('style');
         css.textContent = `
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
         .card {
             width: 100%;
             max-width: 300px;
-            height: 70px;
+            height: 200px;
             background: #353535;
             border-radius: 20px;
             display: flex;
             align-items: center;
             justify-content: left;
             backdrop-filter: blur(10px);
-            transition: 0.5s ease-in-out;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
         }
         
         .card:hover {
@@ -44,37 +52,38 @@ class card extends HTMLElement {
         }
         
         .foto-personagem {
-            width: 50px;
-            height: 50px;
+            width: 80px;
+            height: 80px;
             margin-left: 10px;
             border-radius: 10px;
             background: linear-gradient(#d7cfcf, #9198e5);
         }
         
         
-        .textBox {
+        .text-box {
             width: calc(100% - 90px);
             margin-left: 10px;
             color: white;
             font-family: 'Poppins' sans-serif;
+            gap: 3px;
         }
         
-        .textContent {
+        .text-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
         }
         
-        .span {
-            font-size: 10px;
-        }
-        
         .nome-personagem {
             font-size: 16px;
             font-weight: bold;
+            margin: 0;
         }
         
-        .especie-personagem {
+        .especie-personagem,
+        .location-personagem,
+        .status-personagem,
+        .gender-personagem {
             font-size: 12px;
             font-weight: lighter;
         }
@@ -90,37 +99,49 @@ class card extends HTMLElement {
 
         const characterImage = document.createElement('img');
         characterImage.classList.add('foto-personagem');
-        characterImage.textContent = this.image;
+        characterImage.src = this.image;
 
         const textBox = document.createElement('div');
-        textBox.classList.add('textBox');
+        textBox.classList.add('text-box');
 
         const textContent = document.createElement('div');
-        textContent.classList.add('textContent');
+        textContent.classList.add('text-content');
 
         const nomePersonagem = document.createElement('p');
         nomePersonagem.classList.add('nome-personagem');
         nomePersonagem.textContent = this.nome;
 
+        const locationPersonagem = document.createElement('p');
+        locationPersonagem.classList.add('location-personagem');
+        locationPersonagem.textContent =`Location: ${this.location}`;
+
         const descricaoPersonagem = document.createElement('p');
         descricaoPersonagem.classList.add('especie-personagem');
-        descricaoPersonagem.textContent = this.turma;
+        descricaoPersonagem.textContent = `Species: ${this.descricao}` ;
+
+        const statusPersonagem = document.createElement('p');
+        statusPersonagem.classList.add('status-personagem');
+        statusPersonagem.textContent = `Status: ${this.status}`;
+
+        const genderPersonagem = document.createElement('p');
+        genderPersonagem.classList.add('gender-personagem');
+        genderPersonagem.textContent = `Gender: ${ this.gender}`;
 
         textContent.append(nomePersonagem);
-        textBox.append(textContent, descricaoPersonagem);
+        textBox.append(textContent, descricaoPersonagem, statusPersonagem, genderPersonagem);
         card.append(characterImage, textBox);
 
         return card;
     }
 
 /* 
-        <div class="card">
-            <img src="https://rickandmortyapi.com/api/character/avatar/253.jpeg" class="img" alt="">
-            <div class="textBox">
+         <div class="card">
+            <img src="https://rickandmortyapi.com/api/character/avatar/253.jpeg" class="foto-personagem" alt="">
+            <div class="text-box">
                 <div class="textContent">
-                    <p class="nome-personagem">Clans of Clash</p>
+                    <p class="nome-personagem">Rick</p>
                 </div>
-                <p class="especie-personagem">Xhattmahs is not attacking your base!</p>
+                <p class="especie-personagem">Human</p>
                 
             </div>
         </div>
@@ -131,4 +152,4 @@ class card extends HTMLElement {
 
 }
 
-customElements.define('cards', card)
+customElements.define('card-character', cardCharacter);

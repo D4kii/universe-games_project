@@ -1,11 +1,11 @@
 'use strict'
 
-import { plataforma } from './app.js'
+import { carregarCardPersonagens, carregarCardLugares } from "../main/pages.js"
 
 const routes = {
     '/home': '/pages/home.html',
     '/personagens': '/pages/personagens.html',
-    '/planetas': '/pages/planetas.html',
+    '/lugares': '/pages/lugares.html',
     '/episodios': '/pages/episodios.html'
 }
 const route = async() => {
@@ -13,12 +13,18 @@ const route = async() => {
     window.history.pushState({}, "", window.event.target.href)
     
     const path = window.location.pathname;
-    plataforma(path)
+    console.log(path);
     
     const response = await fetch(routes[path]);
     const html = await response.text();
     
     document.getElementById('root').innerHTML = html
+
+    if (path == '/personagens') {
+        carregarCardPersonagens();
+    } else if(path == '/lugares'){
+        carregarCardLugares();
+    }
    
 }
 

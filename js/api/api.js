@@ -9,7 +9,7 @@ export const getAllCharacters = async () => {
     return data;
 }
 //personagem pelo id do personagem
-export const getCharacter = async (idCharacter) => {
+export const getCharacterById = async (idCharacter) => {
 
     const url = `https://rickandmortyapi.com/api/character/${idCharacter}`;
     const response = await fetch(url);
@@ -60,9 +60,9 @@ export const getCharacterByGender = async (genderCharacter) => {
 }
 
 
-//PLANETAS
-//Retorna todos os planetas
-export const getPlanetas = async () => {
+//LUGARES
+//Retorna todos os lugares
+export const getlugares = async () => {
 
     const url = 'https://rickandmortyapi.com/api/location';
 
@@ -71,8 +71,8 @@ export const getPlanetas = async () => {
     console.log(data);
     return data;
 }
-//Retorna todos os planetas
-export const getPlanetaById = async (idPlaneta) => {
+//Retorna todos os lugares
+export const getlugarById = async (idPlaneta) => {
 
     const url = `https://rickandmortyapi.com/api/location/${idPlaneta}`;
 
@@ -83,20 +83,20 @@ export const getPlanetaById = async (idPlaneta) => {
 }
 
 //Retorna os residentes do planeta especificado
-export const getPlanetsResidents = async (idPlanet) => {
-    const planeta = await getPlanetas()
-    const jsonPlaneta = []
+export const getlugarResidents = async (idPlanet) => {
+    const lugar = await getlugares()
+    const jsonLugar = []
 
-    planeta.residents.forEach(async unidadeResidente => {
+    lugar.residents.forEach(async unidadeResidente => {
 
         const url = unidadeResidente
         const response = await fetch(url);
         const data = await response.json();
         console.log(data);
-        jsonPlaneta.push(data)
+        jsonLugar.push(data)
     });
 
-    return jsonPlaneta;
+    return jsonLugar;
     
 }
 
@@ -122,3 +122,6 @@ export const getEpisodeById = async (idEpisode) => {
     console.log(data);
     return data;
 }
+const todosPersonagens = getAllCharacters;
+
+console.log(todosPersonagens);
