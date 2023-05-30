@@ -1,10 +1,11 @@
 'use strict'
 
-import { getAllCharacters, getlugares } from "../api/api.js";
+import { getAllCharacters, getlugares, getEpisodes } from "../api/api.js";
 
 
 export const todosPersonagens = await getAllCharacters();
 export const todosLugares = await getlugares();
+export const todosEpisodes = await getEpisodes();
 
 
 const criandoCardPersonagens = (personagem) => {
@@ -18,7 +19,7 @@ const criandoCardPersonagens = (personagem) => {
     cardPlace.status = character.status;
     cardPlace.location = character.location.name;
 
-    console.log(character.location.name);
+    console.log(cardPlace);
 
 
     cardPlace.onclick = () => {
@@ -36,6 +37,22 @@ const criandoCardLugares = (lugar) => {
     cardPlace.nome = location.name;
     cardPlace.tipo = location.type;
     cardPlace.dimensao = location.dimension;
+
+    cardPlace.onclick = () => {
+        console.log(2);
+    }
+
+    return cardPlace;
+
+}
+
+const criandoCardEpisodios = (episodio) => {
+    const episode = episodio;
+
+    const cardPlace = document.createElement('card-episodes');
+    cardPlace.nome = episode.nome;
+    cardPlace.dataLancamento = episode.dataLancamento;
+    cardPlace.episode = episode.episode;
 
     cardPlace.onclick = () => {
         console.log(2);
@@ -63,6 +80,17 @@ export const carregarCardLugares = () => {
     const componentsLocation = todosLugares.results.map(criandoCardLugares)
 
     lugaresContainer.replaceChildren(...componentsLocation)
+
+
+}
+
+export const carregarCardEpisodios = () => {
+    
+    const episodiosContainer = document.getElementById('container-episodios');
+
+    const componentsEpisodes = todosEpisodes.results.map(criandoCardEpisodios);
+
+    episodiosContainer.replaceChildren(...componentsEpisodes);
 
 
 }

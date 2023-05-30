@@ -1,6 +1,6 @@
 'use strict'
 
-import { carregarCardPersonagens, carregarCardLugares } from "../main/pages.js"
+import { carregarCardPersonagens, carregarCardLugares, carregarCardEpisodios } from "../main/pages.js"
 
 const routes = {
     '/home': '/pages/home.html',
@@ -24,6 +24,8 @@ const route = async() => {
         carregarCardPersonagens();
     } else if(path == '/lugares'){
         carregarCardLugares();
+    } else if (path == '/episodios') {
+        carregarCardEpisodios();
     }
    
 }

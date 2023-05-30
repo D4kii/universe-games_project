@@ -73,7 +73,7 @@ class cardLugares extends HTMLElement {
             font-weight: 600;
             border: none;
             cursor: pointer;
-            background: linear-gradient(-45deg, #000 0%, #45B348 100% );
+            background: linear-gradient(-45deg, #353535 0%, #45B348 100% );
             border-radius: 5px;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
           }
@@ -85,7 +85,7 @@ class cardLugares extends HTMLElement {
             bottom: 0;
             width: 100%;
             height: 5px;
-            background: linear-gradient(-45deg, #000 0%, #45B348 100% );
+            background: linear-gradient(-45deg, #353535 0%, #45B348 100% );
             z-index: -1;
             transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
           }
@@ -99,6 +99,7 @@ class cardLugares extends HTMLElement {
           }
           
           .card:hover .card-button {
+            background-color: transparent;
             color: #212121;
             background: #e8e8e8;
           }

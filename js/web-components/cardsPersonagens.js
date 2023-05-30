@@ -8,7 +8,7 @@ class cardCharacter extends HTMLElement {
         this.image = null;
         this.status = null;
         this.gender = null;
-        this.location = 'Abadango';
+        this.location = null;
         this.descricao = null;
     }
     static get observedAttributes(){
@@ -34,10 +34,10 @@ class cardCharacter extends HTMLElement {
         box-sizing: border-box;
         }
         .card {
-            width: 100%;
-            max-width: 300px;
-            height: 200px;
-            background: #353535;
+            /* width: 100%; */
+            width: 350px;
+            height: 150px;
+            background: linear-gradient(-45deg, #353535 0%, #45B348 100% );
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -52,17 +52,17 @@ class cardCharacter extends HTMLElement {
         }
         
         .foto-personagem {
-            width: 80px;
-            height: 80px;
-            margin-left: 10px;
-            border-radius: 10px;
+            width: 120px;
+            height: 100%;
+            border-end-start-radius: 10px;
+            border-top-left-radius: 10px;
             background: linear-gradient(#d7cfcf, #9198e5);
         }
         
         
         .text-box {
             width: calc(100% - 90px);
-            margin-left: 10px;
+            margin-left: 15px;
             color: white;
             font-family: 'Poppins' sans-serif;
             gap: 3px;
@@ -87,7 +87,6 @@ class cardCharacter extends HTMLElement {
             font-size: 12px;
             font-weight: lighter;
         }
-          
         
         `
         return css;
@@ -128,7 +127,7 @@ class cardCharacter extends HTMLElement {
         genderPersonagem.textContent = `Gender: ${ this.gender}`;
 
         textContent.append(nomePersonagem);
-        textBox.append(textContent, descricaoPersonagem, statusPersonagem, genderPersonagem);
+        textBox.append(textContent, descricaoPersonagem, statusPersonagem, locationPersonagem, genderPersonagem);
         card.append(characterImage, textBox);
 
         return card;
