@@ -4,7 +4,7 @@ import './rotas/routes.js'
 import './web-components/cardsEpisodios.js'
 import './web-components/cardsLugares.js'
 import './web-components/cardsPersonagens.js'
-import './main/pages.js'
+import './modulo/pages.js'
 
 
 // import { getLugares, getAllCharacters, getPlanetsResidents } from './api/api.js'

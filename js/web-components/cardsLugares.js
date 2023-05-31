@@ -42,17 +42,16 @@ class cardLugares extends HTMLElement {
             overflow: hidden;
             border-radius: 10px;
             transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-            height: 285px;
+            height: 250px;
           }
           
           .card-content {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 20px;
             color: #e8e8e8;
             transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-            height: 200px;
+            height: 150px;
             justify-content: space-between;
           }
           
@@ -104,15 +103,7 @@ class cardLugares extends HTMLElement {
             background: #e8e8e8;
           }
           
-          .card-content .card-button:hover {
-            outline: 2px solid #e8e8e8;
-            background: transparent;
-            color: #e8e8e8;
-          }
-          
-          .card-content .card-button:active {
-            box-shadow: none;
-          }
+
 
         
         `
@@ -132,17 +123,14 @@ class cardLugares extends HTMLElement {
 
         const cardType = document.createElement('p');
         cardType.classList.add('card-tipo');
-        cardType.textContent = this.tipo;
+        cardType.textContent = `Type: ${this.tipo}`;
 
         const cardDimension = document.createElement('p');
         cardDimension.classList.add('card-dimension');
-        cardDimension.textContent = this.dimensao;
+        cardDimension.textContent = `Dimension: ${this.dimensao}`;
 
-        const button = document.createElement('button');
-        button.classList.add('card-button');
-        button.textContent = this.button;
 
-        cardContent.append(cardTitle, cardType, cardDimension, button);
+        cardContent.append(cardTitle, cardType, cardDimension);
         card.append(cardContent);
 
         return card;

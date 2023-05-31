@@ -32,6 +32,111 @@ class cardEpisodios extends HTMLElement {
         box-sizing: border-box;
         }
 
+
+          .card {
+            /* width: 100%; */
+            width: 350px;
+            height: 120px;
+            background: linear-gradient(-45deg, #353535 0%, #45B348 100% );
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            backdrop-filter: blur(10px);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+        }
+        
+        .card:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+        }
+        
+        
+        .text-box {
+            width: calc(100% - 90px);
+            margin-left: 15px;
+            color: white;
+            font-family: 'Poppins' sans-serif;
+            gap: 3px;
+        }
+        
+        .text-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+        }
+        
+        .card-lancamento,
+        .card-episode {
+            font-size: 12px;
+            font-weight: lighter;
+        }
+
+
+        `
+        return css;
+    }
+
+    component() {
+        const card = document.createElement('div');
+        card.classList.add('card');
+
+        const cardContent = document.createElement('div');
+        cardContent.classList.add('text-box');
+
+        const titleCard = document.createElement('div');
+        titleCard.classList.add('text-content');
+
+        const cardTitle = document.createElement('p');
+        cardTitle.classList.add('card-title');
+        cardTitle.textContent = this.nome;
+
+        const cardLancamento = document.createElement('p');
+        cardLancamento.classList.add('card-lancamento');
+        cardLancamento.textContent = this.dataLancamento;
+
+        const cardEpisode = document.createElement('p');
+        cardEpisode.classList.add('card-episode');
+        cardEpisode.textContent = this.episode;
+
+
+        titleCard.append(cardTitle)
+        cardContent.append(titleCard, cardLancamento, cardEpisode);
+        card.append(cardContent);
+
+        return card;
+    }
+
+    /* REFERÊNCIA
+         <div class="card">
+           
+            <div class="text-box">
+                <div class="textContent">
+                    <p class="card-title">Rick</p>
+                </div>
+                <p class="especie-personagem">Human</p>
+                <p class="especie-personagem">Human</p>
+                <p class="especie-personagem">Human</p>
+                <p class="especie-personagem">Human</p>
+                
+            </div>
+        </div>
+    
+    
+
+
+
+
+
+
+
+       //ANTIGO CSS 
         .card {
             position: relative;
             align-items: center;
@@ -109,56 +214,6 @@ class cardEpisodios extends HTMLElement {
             box-shadow: none;
           }
         
-        `
-        return css;
-    }
-
-    component() {
-        const card = document.createElement('div');
-        card.classList.add('card');
-
-        const cardContent = document.createElement('div');
-        cardContent.classList.add('card-content');
-
-        const cardTitle = document.createElement('p');
-        cardTitle.classList.add('card-title');
-        cardTitle.textContent = this.nome;
-
-        const cardLancamento = document.createElement('p');
-        cardLancamento.classList.add('card-lancamento');
-        cardLancamento.textContent = this.dataLancamento;
-
-        const cardEpisode = document.createElement('p');
-        cardEpisode.classList.add('card-episode');
-        cardEpisode.textContent = this.episode;
-
-        const button = document.createElement('button');
-        button.classList.add('card-button');
-        button.textContent = this.button;
-
-        cardContent.append(cardTitle, cardLancamento, cardEpisode, button);
-        card.append(cardContent);
-
-        return card;
-    }
-
-    /* REFERÊNCIA
-
-        <div class="card">
-            <div class="card-content">
-                <p class="card-title">Card Hover Effect
-                </p>
-                <p class="card-lancamento">
-                    Lorem ipsum dolor sit amet, consectetur 
-                </p>
-                <p class="card-episode">
-                    Lorem ipsum dolor sit amet, consectetur 
-                </p>
-                <button class="card-button">Read more</button>
-            </div>
-        </div>
-    
-    
     */
 
 
