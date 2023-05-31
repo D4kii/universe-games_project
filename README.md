@@ -1,1 +1,1 @@
-# Universe-Games
+# Rick And Morty Info
