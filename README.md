@@ -1,14 +1,14 @@
 # Rick And Morty Info
 
 > Clique _[aqui](https://www.figma.com/file/3JkhWsPMAB15mkO3sjp485/Site-Rick-and-Morty?type=design&node-id=90-85&t=AuLgw4revgkJMKCs-0)_ para vizualizar o Projeto no Figma
-> > Clique _[aqui](https://rickandmortyapi.com)_ para ir para o site da API
+> > Clique _[aqui](https://rickandmortyapi.com)_ para ir para o site de documentação da API
 
 ![](./img/home-rickandmorty.PNG)
 
 
 ## Objetivo
 
-O projeto utilizará Web Components, que são elementos independentes e reutilizáveis da interface do usuário. Além disso, o projeto contará com rotas para proporcionar uma navegação intuitiva e fluida na plataforma, permitindo aos usuários moverem-se facilmente entre diferentes seções, como a home, página de personagens, Lugares e Episódios, utilizando a API com o intuito de demonstrar o conhecimento sobre o consumo da mesma adquirido nas aulas anteriores.
+O projeto utilizará Web Components, que são elementos independentes e reutilizáveis da interface do usuário. O projeto também contará com rotas para proporcionar uma navegação intuitiva e fluida na plataforma, permitindo aos usuários moverem-se facilmente entre diferentes seções, como a home, página de personagens, Lugares e Episódios, utilizando da API com o intuito de mostrar o conhecimento sobre o consumo da mesma adquirido nas aulas durante o semestre.
 
 ## Critérios de avaliação
 - [ ]  Documentou problemas, se encontrado, para futuras consultas?
