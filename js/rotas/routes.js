@@ -3,6 +3,7 @@
 import { carregarCardPersonagens, carregarCardLugares, carregarCardEpisodios, buscarCharacter } from "../modulo/pages.js"
 
 const routes = {
+    '/': '/pages/home.html',
     '/home': '/pages/home.html',
     '/personagens': '/pages/personagens.html',
     '/lugares': '/pages/lugares.html',
@@ -27,6 +28,8 @@ const route = async() => {
         carregarCardLugares();
     } else if (path == '/episodios') {
         carregarCardEpisodios();
+    }else if (path == '/') {
+        
     }
    
 }
