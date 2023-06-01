@@ -1,6 +1,13 @@
 'use strict'
 
-import { getAllCharacters, getlugares, getEpisodes, getCharacterByName, getEpisodeByName, getlugarByName } from "../api/api.js";
+import {
+    getAllCharacters, getlugares,
+    getEpisodes, getCharacterByName,
+    getEpisodeByName, getlugarByName,
+    getCharacterBySpecies, getCharacterByStatus,
+    getCharacterByGender, getEpisodeByCode
+}
+    from "../api/api.js";
 
 
 export const todosPersonagens = await getAllCharacters();
@@ -18,13 +25,6 @@ const criandoCardPersonagens = (personagem) => {
     cardPlace.gender = character.gender;
     cardPlace.status = character.status;
     cardPlace.location = character.location.name;
-
-    console.log(cardPlace);
-
-
-    cardPlace.onclick = () => {
-
-    }
 
     return cardPlace;
 
@@ -48,7 +48,6 @@ const criandoCardLugares = (lugar) => {
 const criandoCardEpisodios = (episodio) => {
     const episode = episodio;
 
-    console.log(episode);
 
     const cardPlace = document.createElement('card-episodes');
     cardPlace.nome = episode.name;
@@ -68,6 +67,7 @@ export const carregarCardPersonagens = () => {
     const personagensContainer = document.getElementById('container-personagens');
     const componentsCharacter = todosPersonagens.results.map(criandoCardPersonagens)
     buscarCharacter();
+    buscarCharacterBySpecies();
 
     personagensContainer.replaceChildren(...componentsCharacter)
 
@@ -106,20 +106,67 @@ export const buscarCharacter = () => {
         if (tecla == 'Enter') {
             const valorInput = inputCharacter.value;
             if (valorInput !== undefined || valorInput !== '') {
-                const personagensProcurados = await getCharacterByName(valorInput);
+                if (valorInput.toUpperCase() == 'DEAD' || valorInput.toUpperCase() == 'LIVE') {
 
-                const personagensContainer = document.getElementById('container-personagens');
-                const componentsCharacter = personagensProcurados.results.map(criandoCardPersonagens);
+                    const statusPersonagensProcurados = await getCharacterByStatus(valorInput);
 
-                personagensContainer.replaceChildren(...componentsCharacter)
+                    const personagensContainer = document.getElementById('container-personagens');
+                    const componentsCharacter = statusPersonagensProcurados.results.map(criandoCardPersonagens);
 
-            } 
+                    personagensContainer.replaceChildren(...componentsCharacter);
+
+                } else if (valorInput.toUpperCase() == 'FEMALE' || valorInput.toUpperCase() == 'FEM' ||
+                    valorInput.toUpperCase() == 'MALE') {
+
+                    const genderPersonagensProcurados = await getCharacterByGender(valorInput);
+                    console.log(genderPersonagensProcurados);
+
+                    const personagensContainer = document.getElementById('container-personagens');
+                    const componentsCharacter = genderPersonagensProcurados.results.map(criandoCardPersonagens);
+
+                    personagensContainer.replaceChildren(...componentsCharacter);
+                } else {
+
+                    const personagensProcurados = await getCharacterByName(valorInput);
+
+                    const personagensContainer = document.getElementById('container-personagens');
+                    const componentsCharacter = personagensProcurados.results.map(criandoCardPersonagens);
+
+                    personagensContainer.replaceChildren(...componentsCharacter)
+                }
+
+            }
 
         }
 
 
     });
 
+}
+
+export const buscarCharacterBySpecies = () => {
+    const inputCharacter = document.getElementById('search-personagens');
+
+    inputCharacter.addEventListener('keyup', async function (key) {
+        var tecla = key.key || key.keyCode;
+        console.log(tecla);
+
+        if (tecla == 'Enter') {
+            const valorInput = inputCharacter.value;
+            if (valorInput !== undefined || valorInput !== '') {
+                const personagensProcurados = await getCharacterBySpecies(valorInput);
+
+                const personagensContainer = document.getElementById('container-personagens');
+                const componentsCharacter = personagensProcurados.results.map(criandoCardPersonagens);
+
+                personagensContainer.replaceChildren(...componentsCharacter)
+
+            }
+
+        }
+
+
+    });
 
 }
 
@@ -133,16 +180,20 @@ export const buscarEpisode = () => {
         if (tecla == 'Enter') {
             const valorInput = inputEpisode.value;
             if (valorInput !== undefined || valorInput !== '') {
-                const episodiosProcurados = await getEpisodeByName(valorInput);
+
+                const nomeEpisodiosProcurados = await getEpisodeByName(valorInput);
 
                 const episodiosContainer = document.getElementById('container-episodios');
-                const componentsEpisodes = episodiosProcurados.results.map(criandoCardEpisodios);
-            
-                episodiosContainer.replaceChildren(...componentsEpisodes);
-            } 
+
+                const componentsEpisodesByName = criandoCardEpisodios(criandoCardEpisodios);
+
+                episodiosContainer.replaceChildren(...componentsEpisodesByName);
+
+            }
         }
     });
 }
+
 
 export const buscarLugar = () => {
     const inputLocation = document.getElementById('search-lugares');
@@ -158,9 +209,9 @@ export const buscarLugar = () => {
 
                 const lugaresContainer = document.getElementById('container-lugares');
                 const componentsLocation = lugaresProcurados.results.map(criandoCardLugares);
-            
+
                 lugaresContainer.replaceChildren(...componentsLocation)
-            } 
+            }
         }
     });
 }
