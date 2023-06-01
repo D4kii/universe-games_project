@@ -8,7 +8,7 @@
 
 ## Objetivo
 
-O projeto utilizará Web Components, que são elementos independentes e reutilizáveis da interface do usuárioo. Além disso, o projeto contará com rotas para proporcionar uma navegação intuitiva e fluida na plataforma, permitindo aos usuários moverem-se facilmente entre diferentes seções, como a home, página de personagens, Lugares e Episódios, utilizando a API com o intuito de demonstrar o conhecimento sobre o consumo da mesma adquirido nas aulas anteriores.
+O projeto utilizará Web Components, que são elementos independentes e reutilizáveis da interface do usuário. Além disso, o projeto contará com rotas para proporcionar uma navegação intuitiva e fluida na plataforma, permitindo aos usuários moverem-se facilmente entre diferentes seções, como a home, página de personagens, Lugares e Episódios, utilizando a API com o intuito de demonstrar o conhecimento sobre o consumo da mesma adquirido nas aulas anteriores.
 
 ## Critérios de avaliação
 - [ ]  Documentou problemas, se encontrado, para futuras consultas?
