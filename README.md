@@ -3,7 +3,7 @@
 > Clique _[aqui](https://www.figma.com/file/3JkhWsPMAB15mkO3sjp485/Site-Rick-and-Morty?type=design&node-id=90-85&t=AuLgw4revgkJMKCs-0)_ para vizualizar o Projeto no Figma
 > > Clique _[aqui](https://rickandmortyapi.com)_ para ir para o site da API
 
-![](./imgs/)
+![](./img/home-rickandmorty.PNG)
 
 
 ## Objetivo
