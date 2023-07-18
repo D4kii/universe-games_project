@@ -28,7 +28,7 @@ O projeto utilizará Web Components, que são elementos independentes e reutiliz
 * HTML 
 * CSS
 * JavaScript
-* Netifly
+* Netlifly
 
 ## Autores
 * [Daniela](https://github.com/D4kii)
